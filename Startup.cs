@@ -53,7 +53,9 @@ namespace DotNetCoreSqlDb
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc();
+            app.UseMvc({
+   routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+});
         }
     }
 }
