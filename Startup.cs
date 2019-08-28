@@ -9,8 +9,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using DotNetCoreSqlDb.Models;
 
 namespace DotNetCoreSqlDb
 {
@@ -35,9 +33,6 @@ namespace DotNetCoreSqlDb
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddDbContext<MyDatabaseContext>(options =>
-                    options.UseSqlite("Data Source=localdatabase.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
